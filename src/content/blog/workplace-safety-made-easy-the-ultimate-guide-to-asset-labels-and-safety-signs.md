@@ -33,13 +33,13 @@ Durability is key to effective labeling. Labels that wear out or fade can lead t
 
 ### 4. Ensuring Compliance with Industry Standards
 
-When it comes to workplace safety, labels and signs have to do more than just look good—they need to meet industry-specific standards. Following regulations like OSHA and ANSI, or Australian Standards (AS) in Australia, is key to keeping your business compliant, protecting your team, and avoiding costly penalties. Here are some important points to consider:
+When it comes to workplace safety, labels and signs have to do more than just look good—they need to meet industry-specific standards. Following regulations like OSHA and ANSI, or Indian Standards (AS) in India, is key to keeping your business compliant, protecting your team, and avoiding costly penalties. Here are some important points to consider:
 
 - Safety Colors and Symbols: Standards often specify colors and symbols for different warnings. For instance, red usually signals danger, while yellow is used for caution. These visual cues help people instantly understand the level of risk.
 - Size and Legibility: Signs and labels should be large and clear enough to be read from a safe distance. This makes it easy for people to spot warnings without having to get too close to potentially hazardous areas.
 - Placement: To be effective, labels and signs need to be in highly visible spots where people can see them right away. Don’t hide them around corners or in areas where they’re easy to miss—clear visibility is crucial for everyone’s safety.
 
-In Australia, adhering to local standards (like AS 1319 for safety signs) is essential. These standards specify requirements for hazard signs, mandatory signs, prohibition signs, and emergency information signs to ensure they communicate the right message in a clear and consistent way. Staying current with these guidelines helps create a safer workplace and demonstrates a strong commitment to employee wellbeing.
+In India, adhering to local standards (like AS 1319 for safety signs) is essential. These standards specify requirements for hazard signs, mandatory signs, prohibition signs, and emergency information signs to ensure they communicate the right message in a clear and consistent way. Staying current with these guidelines helps create a safer workplace and demonstrates a strong commitment to employee wellbeing.
 
 ### 5. Keep Labels and Signs in Top Shape with Regular Maintenance
 

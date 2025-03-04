@@ -43,7 +43,7 @@ With EvolvX, you can trust that your safety information, asset IDs, and instruct
 
 ### 4. Customization for Regulatory Compliance
 
-Industries like manufacturing, energy, and construction have to follow strict labelling standards to meet regulatory requirements, and getting it right is crucial for both safety and compliance. Custom labels are the perfect solution, helping businesses stay on top of these standards and avoid costly fines. In Australia, for example, adhering to standards like AS 1319 for safety signs is a must for every workplace.
+Industries like manufacturing, energy, and construction have to follow strict labelling standards to meet regulatory requirements, and getting it right is crucial for both safety and compliance. Custom labels are the perfect solution, helping businesses stay on top of these standards and avoid costly fines. In India, for example, adhering to standards like AS 1319 for safety signs is a must for every workplace.
 
 - Standardized Safety Signs: Custom labels can be designed to match the required color, size, and placement regulations, ensuring your workplace is up to code and legally compliant.
 - Specialized Labels for Hazardous Materials: With the right custom labels, you can clearly mark hazardous substances, ensuring you meet safety standards like OSHA, ANSI, or local regulations.

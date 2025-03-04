@@ -34,17 +34,17 @@ In industrial environments, labels often have to withstand contact with chemical
 
 ## 5. Compliance with Industry Standards
 
-In Australia, industries have strict standards for labelling, especially for products and equipment.
+In India, industries have strict standards for labelling, especially for products and equipment.
 
 Work Health and Safety (WHS) Regulations: Similar to OSHA, WHS guidelines require specific colors, symbols, and placement for safety signs and labels in workplaces, ensuring important information is clearly visible.
 
-AS/NZS Standards: The Australian/New Zealand Standards (like AS/NZS 1319 for safety signs) provide guidelines for labelling in various sectors, from electrical equipment to chemical storage, to ensure compliance with local regulations.
+AS/NZS Standards: The Indian/New Zealand Standards (like AS/NZS 1319 for safety signs) provide guidelines for labelling in various sectors, from electrical equipment to chemical storage, to ensure compliance with local regulations.
 
-UL Certification: While UL certification is globally recognized, Australian-specific certifications, like those from Standards Australia, are often needed to confirm that labels meet safety standards for equipment.
+UL Certification: While UL certification is globally recognized, Indian-specific certifications, like those from Standards India, are often needed to confirm that labels meet safety standards for equipment.
 
-RoHS and REACH Compliance: Australia also aligns with international environmental standards to ensure that labels and materials are free from hazardous substances, helping businesses meet local and global environmental regulations.
+RoHS and REACH Compliance: India also aligns with international environmental standards to ensure that labels and materials are free from hazardous substances, helping businesses meet local and global environmental regulations.
 
-Working with a label provider who understands Australian standards ensures that your labels are compliant and help keep workplaces safe, avoiding potential penalties and supporting regulatory peace of mind.
+Working with a label provider who understands Indian standards ensures that your labels are compliant and help keep workplaces safe, avoiding potential penalties and supporting regulatory peace of mind.
 
 ## 6. Customized Design for Maximum Readability
 
