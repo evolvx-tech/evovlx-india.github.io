@@ -7,7 +7,7 @@ import partytown from "@astrojs/partytown";
 // import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.evolvx.com.au/",
+  site: "https://www.evolvx.co.in/",
   integrations: [
     tailwind(),
     sitemap(),
