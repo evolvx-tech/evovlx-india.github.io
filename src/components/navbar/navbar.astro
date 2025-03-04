@@ -1,0 +1,114 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "Products",
+    path: "/",
+    children: [
+      {
+        title: "Industrial Identification Solutions",
+        path: "/stickers"
+      },
+      { title: "Hardware Supply", path: "/hardware" }
+    ]
+  },
+  {
+    title: "Why Choose Us",
+    path: "/whyus",
+    type: "whyus"
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+    type: "blog"
+  },
+  {
+    title: "Contact Us",
+    path: "/contact",
+    type: "contactus"
+  }
+];
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between lg:px-10">
+        <Link href="/" style="inverted">
+          <img src="/img/logo_sm.webp" alt="EvolvX Logo" class="logo" />
+        </Link>
+        <div class="block lg:hidden mr-6">
+          <MenuIcon class="w-8 h-8 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul
+          class="flex flex-col lg:flex-row lg:gap-3 md:px-10 px-4 mb-8 md:mb-0 md:items-center"
+        >
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && item.type != "contactus" && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"
+                    >
+                      <span> {item.title}</span>
+                    </a>
+                  </li>
+                )}
+                {item.type === "contactus" && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-2 py-2 items-center text-gray-900 hover:text-gray-900"
+                    >
+                      <button
+                        type="button"
+                        class="btn-bg-color bfocus:outline-none shadow rounded-lg text-white font-semibold px-4 py-1.5 text-center"
+                      >
+                        Contact us
+                      </button>
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+      </MenuItems>
+    </Astronav>
+  </header>
+</Container>
+<style>
+  .btn-bg-color {
+    background-color: #00b6f0 !important;
+  }
+  .btn-text-color {
+    color: #5b5b5b !important;
+  }
+  .logo {
+    width: auto;
+    height: 80px;
+    margin: 14px 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      height: 60px;
+    }
+  }
+</style>

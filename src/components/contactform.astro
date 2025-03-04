@@ -1,0 +1,141 @@
+<!-- To make this contact form work, create your free access key from https://web3forms.com/
+     Then you will get all form submissions in your email inbox. -->
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  id="form"
+  class="needs-validation"
+  novalidate
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="051876e1-af74-4e6e-b52b-9af70f91d2ea"
+  />
+  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+  <input type="hidden" name="subject" value="Sales Enquiry" />
+  <input type="hidden" name="from_name" value="EvolvX Notifications" />
+  <div class="mb-3">
+    <input
+      type="text"
+      name="name"
+      placeholder="Full Name *"
+      class="px-2 py-3 bg-white w-full placeholder:text-slate-500 text-slate-500 text-md border-b border-gray-300 focus:border-blue-600 outline-none"
+      required=""
+    />
+    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+      Please provide your full name.
+    </div>
+  </div>
+  <div class="mb-3">
+    <input
+      type="email"
+      name="email"
+      placeholder="Email *"
+      class="px-2 py-3 bg-white w-full placeholder:text-slate-500 text-slate-500 text-md border-b border-gray-300 focus:border-blue-600 outline-none"
+      required=""
+    />
+    <div class="empty-feedback text-red-400 text-sm mt-1">
+      Please provide your email address.
+    </div>
+    <div class="invalid-feedback text-red-400 text-sm mt-1">
+      Please provide a valid email address.
+    </div>
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      name="phone"
+      placeholder="Telephone *"
+      class="px-2 py-3 bg-white w-full placeholder:text-slate-500 text-slate-500 text-md border-b border-gray-300 focus:border-blue-600 outline-none"
+      required=""
+    />
+    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+      Please provide your Phone Number.
+    </div>
+  </div>
+  <div class="mb-4">
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      class="px-2 py-3 bg-white w-full placeholder:text-slate-500 text-slate-500 text-md border-b border-gray-300 focus:border-blue-600 outline-none"
+      rows="5"></textarea>
+  </div>
+  <button
+    type="submit"
+    class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2 text-white hover:bg-slate-900 border-2 border-transparent bg-sky-500 text-lg font-semibold"
+    >Send Message
+  </button>
+</form>
+
+<div id="result" class="mt-3 text-center"></div>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) {
+      form.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Sending Message...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add("text-green-500");
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.classList.add("text-red-500");
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove("was-validated");
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+</script>

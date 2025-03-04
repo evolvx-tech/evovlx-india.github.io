@@ -1,0 +1,120 @@
+---
+// @ts-ignore
+import { Picture } from "astro:assets";
+
+const features = [
+  {
+    title: "Durable Barcode Labels",
+    features:
+      "Scratch-resistant surface, high-resolution print, and long-lasting adhesive",
+    application:
+      "Engineered to maintain readability under heavy wear and tear, making them ideal for asset tracking and inventory management",
+    path: "/img/products/1.svg",
+    link: "/stickers#custom-labels-stickers"
+  },
+  {
+    title: "Weatherproof Labels",
+    features:
+      "Waterproof, UV-resistant, and temperature-stable, suitable for harsh weather conditions.",
+    application:
+      "Designed to endure extreme outdoor conditions, perfect for assets exposed to rain, sun, and temperature fluctuations.",
+    path: "/img/products/2.svg",
+    link: "/stickers#custom-labels-stickers"
+  },
+  {
+    title: "Instructional and Compliance Labels",
+    features:
+      "Durable waterproof vinyl, clear and legible print for instructions or regulations, available with tamper-evident options.",
+    path: "/img/products/20.svg",
+    link: "/stickers#custom-made-vinyl-labels"
+  },
+  {
+    title: "Expansion Anchors",
+    features:
+      "Ideal for concrete and masonry, these anchors expand upon installation for a secure hold.",
+    path: "/img/products/24.svg",
+    link: "/hardware#anchor-fasteners"
+  },
+  {
+    title: "Heat-Shrink Cable Labels",
+    features:
+      "Flame-retardant material, shrink ratio options for a snug fit, excellent resistance to chemicals and oils.",
+    application:
+      "Ideal for permanently labeling and protecting cables and wires in high-temperature and industrial environments, providing a durable and secure fit. Ideal for color-coding cables by function or department, ensuring organized and efficient cable management in complex systems.",
+    path: "/img/products/12.svg",
+    link: "/stickers#sleeves-wrap-around-labels"
+  },
+  {
+    title: "Hex Bolts",
+    features:
+      "Hex Bolts are Versatile and commonly used in construction and industrial applications.",
+    path: "/img/products/27.svg",
+    link: "/hardware#tensile-nut-bolts"
+  }
+];
+---
+
+<div class="bg-gray-100">
+  <section class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-4xl tracking-tight text-decoration mb-20">
+        TRENDING PRODUCTS
+      </h2>
+      <div class="sm:w-full lg:grid lg:grid-cols-3 lg:gap-10 mx-auto">
+        {
+          features.map((item) => (
+            <div class="flex flex-1 flex-col justify-between w-full rounded shadow-2xl shadow card-body transition duration-300 hover:scale-105 overflow-hidden md:mb-0 mb-10">
+              <div>
+                <Picture
+                  src={item.path}
+                  alt=""
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full object-cover object-center bg-white"
+                />
+              </div>
+              <div class="py-6 px-4 lg:p-6 transition-all duration-300 rounded-b-2xl ">
+                <h4 class="text-xl text-gray-900 font-medium leading-8 mb-5">
+                  {item.title}
+                </h4>
+                <p class="text-gray-500 leading-6 mb-10">{item.features}</p>
+                <div class="d-flex flex-row justify-content-center mt-auto text-center">
+                  <a
+                    href={item.link}
+                    class="btn text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-md px-5 py-3 text-center me-2 mb-2"
+                  >
+                    View Products
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+  }
+
+  .self-end {
+    position: relative;
+  }
+  .self-end .btn {
+    /* position:absolute;
+  bottom:0; */
+  }
+
+  picture img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+</style>

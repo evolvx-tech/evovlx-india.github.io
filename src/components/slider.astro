@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import Logo1 from "../../assets/img/icon.jpg";
+---
+
+<section class="mb-20">
+  <div class="feedback">
+    <div class="card-back">
+      <h1 class="text-2xl md:text-4xl tracking-tight text-decoration mb-10">
+        REAL CLIENTS...REAL COMMENTS...
+      </h1>
+    </div>
+
+    <div class="card-body">
+      <div class="card transition duration-300 hover:scale-110">
+        <div class="p-2">
+          <img
+            src="/img/Icon.jpg"
+            class="card-img-top h-auto max-w-full rounded-lg"
+          />
+        </div>
+        <div
+          class="max-w-lg p-12 bg-white border border-gray-400 rounded-lg shadow-4xl"
+        >
+          <div class="w-full float-right">
+            <blockquote
+              class="text-xl italic font-semibold text-cyan-500 float-right"
+            >
+              <svg
+                class="w-14 h-14"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 14"
+              >
+                <path
+                  d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+                ></path>
+              </svg>
+            </blockquote>
+          </div>
+
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            EvolvX is a trusted supplier of high-qualitylabels and signs
+            designed for durability andreliability. Our products
+            withstandenvironmental challenges like moisture,chemicals, UV light,
+            and abrasion, backed byrigorous testing. Our safety signs
+            meetAustralian Standards for Signage (AS1319)and ISO 7010, in line
+            with global guidelines forhazard identification and risk management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script is:inline>new Swiper('.swiper')</script> -->
+
+<style>
+  .card-img-top {
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px !important;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  .card {
+    position: relative;
+    top: 40%;
+  }
+  .feedback {
+    position: relative;
+    background-color: #5b5b5b;
+    color: white;
+  }
+  .card-body {
+    position: relative;
+  }
+  .card-back,
+  .card-body {
+    height: 150px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    place-content: center;
+  }
+</style>

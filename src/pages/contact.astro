@@ -1,0 +1,63 @@
+---
+import Contactform from "@components/contactform.astro";
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Contact Us">
+  <Container>
+    <section
+      class="page-heading"
+      style="background-image: linear-gradient(to right, rgba(0, 182, 240, 0.8) 30%, rgba(0, 182, 240, 0.95) 100%), url(/img/bg-heading-contact.webp); background-position: bottom;"
+    >
+      <h1 class="text-4xl lg:text-5xl font-bold text-white">Contact Us</h1>
+    </section>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16 px-4">
+      <div>
+        <div>
+          <h2 class="font-bold text-2xl text-gray-800 mb-4">
+            Contact <span class="name-hl">EvolvX</span>
+          </h2>
+          <p class="text-md text-justify text-slate-500 mb-3">
+            At EvolvX, we understand the importance of delivering high-quality,
+            tailored labels quickly and affordably.
+          </p>
+          <p class="text-md text-justify text-slate-500 mb-3">
+            Whether you need samples or want to discuss your specific
+            requirements, fill out the form on this page. Our team will respond
+            promptly to assist you with the perfect labelling solution for your
+            application.
+          </p>
+          <p class="text-md text-justify text-slate-500 mb-3">
+            Experience efficiency, quality, and unmatched service with
+            EvolvX—your trusted partner for Industrial identification needs.
+          </p>
+        </div>
+        <div class="mt-5 text-md">
+          <div class="flex items-start mt-3 space-x-3 text-slate-500">
+            <Icon class="text-5xl name-hl" name="uil:map-marker" />
+            <p>
+              EvolvX Australia Pty Ltd
+              <br />
+              ACN: 681 705 831 <br />
+              278 / 18 - 20 Edinburgh Street Oakleigh South VIC 3167, Australia.
+            </p>
+          </div><div class="flex items-center mt-3 space-x-4 text-slate-500">
+            <Icon class="text-3xl name-hl" name="uil:envelope" />
+            <a href="mailto:sales@evolvx.com.au" class="hover:text-sky-600"
+              >sales@evolvx.com.au</a
+            >
+          </div><div class="flex items-center mt-3 space-x-4 text-slate-500">
+            <Icon class="text-3xl name-hl" name="uil:phone" />
+            <a href="tel:0468391010" class="hover:text-sky-600">0468391010</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+  </Container>
+</Layout>

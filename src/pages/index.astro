@@ -1,0 +1,42 @@
+---
+import Container from "@components/container.astro";
+
+import Ats from "@components/ats.astro";
+import Hero from "@components/hero.astro";
+import MySlider from "@components/slider.astro";
+import Layout from "@layouts/Layout.astro";
+import ProductList from "@components/productlist.astro";
+import Whyus from "@components/whyus.astro";
+import Clients from "@components/clients.astro";
+import Blogs from "@components/blogs.astro";
+---
+
+<Layout title="">
+  <Container>
+    <Hero />
+
+    <Ats />
+    <Whyus />
+    <ProductList />
+    <!-- <Clients /> -->
+
+    <!-- REAL CLIENTS REAL COMMENTS -- Section-->
+    <!-- <MySlider /> -->
+    <Blogs />
+  </Container>
+</Layout>
+
+<style>
+  .about-us {
+    height: 200px;
+  }
+  @media screen and (max-width: 800px) {
+    #whyus {
+      display: block;
+    }
+
+    .about-us {
+      height: 200px;
+    }
+  }
+</style>

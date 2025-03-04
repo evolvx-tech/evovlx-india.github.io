@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return !data.draft;
+});
+
+publishedBlogEntries.sort(function (a, b) {
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+// Get the entry directly from the prop on render
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <Container>
+    <div class="container mx-auto mt-14">
+      <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+        <div class="col-span-2">
+          <div class="px-4 md:px-0">
+            <h1
+              class="text-2xl lg:text-3xl font-bold lg:tracking-tight mt-1 lg:leading-tight mb-6"
+            >
+              {entry.data.title}
+            </h1>
+            <div class="w-full">
+              <img
+                src={entry.data.image.src}
+                class="w-full rounded"
+                alt={entry.data.image.alt}
+              />
+            </div>
+            <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+              <time
+                class="text-gray-400"
+                datetime={entry.data.publishDate.toISOString()}
+              >
+                {entry.data.publishDate.toDateString()}
+              </time>
+            </div>
+          </div>
+
+          <div
+            class="prose prose-lg prose-p:text-justify prose-li:text-justify mt-6 max-w-7xl px-4 md:px-0"
+          >
+            <Content />
+          </div>
+
+          <div class="text-center mt-8">
+            <a
+              href="/blog"
+              class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
+              >← Back to Blog</a
+            >
+          </div>
+        </div>
+        <div class="px-6 mt-6">
+          <div class="sticky top-20">
+            <h3
+              class="text-xl font-bold mb-4 bg-sky-400 p-5 rounded text-white text-center"
+            >
+              Recent Blogs
+            </h3>
+            <ul>
+              {
+                publishedBlogEntries.map((blogPostEntry, index) => (
+                  <li class="mb-4">
+                    <a
+                      href={`/blog/${blogPostEntry.slug}`}
+                      class="flex items-center text-sky-600 hover:text-indigo-600"
+                    >
+                      <img
+                        src={blogPostEntry.data.image.src}
+                        alt=""
+                        class="w-16 h-16 mr-4 object-cover rounded"
+                      />
+                      <span>{blogPostEntry.data.title}</span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .prose p {
+    text-align: justify;
+  }
+</style>

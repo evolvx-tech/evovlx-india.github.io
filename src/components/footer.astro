@@ -1,0 +1,195 @@
+---
+import { Icon } from "astro-icon/components";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer-content w-full">
+  <div class="grid grid-cols-1 gap-1 md:px-6 py-12 mx-auto lg:grid-cols-3">
+    <div class="md:pe-10 pe-0">
+      <img src="/img/logo_sm.webp" class="logo" alt="Footer Logo" />
+      <h2 class="font-bold">Industrial Solutions for Your Business</h2>
+
+      <p class="mt-3 text-justify">
+        Whether you're a start-up or a blue-chip company, EvolvX is equipped to
+        meet your labeling needs. Our team is dedicated to responding to
+        customer requests swiftly and effectively. EvolvX supplies high-quality,
+        customized labels tailored for both industry and commerce.
+      </p>
+      <div
+        style="max-width: 300px;height: 3px;display: block; background: #00b6f0; margin-top: 15px;"
+      >
+      </div>
+    </div>
+
+    <div
+      class="grid lg:grid-cols-3 gap-3 lg:col-span-2 sm:grid-cols-1 lg:pl-20 md:mt-0 mt-6"
+    >
+      <div>
+        <h2 class="mb-2 text-lg font-bold">MENU</h2>
+        <ul class="max-w-md space-y-1 list-none list-inside">
+          <li class="pt-4">
+            <a
+              href="/stickers"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Industrial Identification Solutions</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="/hardware"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Hardware Supply</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="/stickers#custom-labels-stickers"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Custom Labels & Stickers</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="/stickers#tags-and-flags"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Tags & Flags</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="/stickers#equipment-labels"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Equipment Labels</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-2 text-lg font-bold pt-4 md:pt-0">INFORMATION</h2>
+        <ul class="max-w-md space-y-1 list-none list-inside">
+          <li class="pt-4">
+            <a
+              href="/privacy"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Privacy Policy</a
+            >
+          </li>
+          <li class="pt-4">
+            <a
+              href="/blog"
+              class="hover:text-indigo-600 text-sky-600 transition-all duration-200"
+              >Blogs</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-2 text-lg font-bold pt-4 md:pt-0">CONTACT US</h2>
+        <ul class="max-w-md space-y-1 list-none list-inside mb-10">
+          <li class="pb-2">
+            <div class="flex items-center">
+              <Icon class="font-bold" name="uil:envelope" />
+              <a
+                href="mailto:sales@evolvx.com.au"
+                title="sales@evolvx.com.au"
+                class="ml-2 hover:text-indigo-600 text-sky-600"
+                >sales@evolvx.com.au</a
+              >
+            </div>
+          </li>
+          <li class="pb-2">
+            <div class="flex items-center">
+              <Icon class="font-bold" name="uil:phone" />
+              <a
+                href="tel:0468391010"
+                class="ml-2 hover:text-indigo-600 text-sky-600">0468391010</a
+              >
+            </div>
+          </li>
+          <li class="pb-2">
+            <div class="flex items-center">
+              <Icon class="font-bold" name="uil:location" />
+              <span class="ml-2">ExolvX Australia Pty Ltd</span>
+            </div>
+          </li>
+          <li class="ml-6 pb-2">ACN: 681 705 831</li>
+          <li class="ml-6 pb-2">278 / 18 - 20 Edinburgh Street</li>
+          <li class="ml-6">Oakleigh South VIC 3167, Australia.</li>
+        </ul>
+
+        <!-- Social Icons -->
+
+        <!-- <h2 class="mb-4 text-lg font-extrabold">CONNECT WITH US</h2>
+
+        <ul class="flex flex-wrap gap-x-3">
+          <li>
+            <a href="#">
+              <Icon
+                class="font-bold text-5xl hover:text-sky-600 transition-all duration-200"
+                name="uil:linkedin"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <Icon
+                class="font-bold text-5xl hover:text-sky-600 transition-all duration-200"
+                name="uil:instagram"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <Icon
+                class="font-bold text-5xl hover:text-sky-600 transition-all duration-200"
+                name="uil:facebook"
+              />
+            </a>
+          </li>
+        </ul> -->
+
+        <!-- Social Icons -->
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="mb-3 text-sm">
+      Copyright &copy; {year}
+      <span class="name-hl font-semibold">EvolvX</span>. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, #f0f0f0f2 50% 100%),
+      url(/src/assets/hero.jpeg);
+    filter: alpha(opacity = 50);
+    color: #3b3b3b;
+    z-index: 1;
+    margin-top: 50px;
+    padding: 60px;
+  }
+
+  .footer-content .logo {
+    height: 100px;
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      padding: 16px;
+      background-size: cover;
+    }
+    .footer-content .logo {
+      height: 80px;
+    }
+  }
+</style>

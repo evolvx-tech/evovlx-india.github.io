@@ -1,0 +1,111 @@
+---
+// @ts-ignore
+import { Picture } from "astro:assets";
+
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+const features = [
+  {
+    title: "Durable Barcode Labels",
+    features:
+      "Scratch-resistant surface, high-resolution print, and long-lasting adhesive",
+    application:
+      "Engineered to maintain readability under heavy wear and tear, making them ideal for asset tracking and inventory management",
+    path: "/products/box.png  "
+  },
+  {
+    title: "Weatherproof Labels",
+    features:
+      "Waterproof, UV-resistant, and temperature-stable, suitable for harsh weather conditions.",
+    application:
+      "Designed to endure extreme outdoor conditions, perfect for assets exposed to rain, sun, and temperature fluctuations.",
+    path: "/products/boxpack.jpeg"
+  },
+  {
+    title: "Removable and Repositionable Labels",
+    features:
+      "Residue-free adhesive, repositionable multiple times without compromising adhesion.",
+    application:
+      "Ideal for temporary asset tracking or labels that may need relocation without leaving residue.",
+    path: "/products/networkwire.jpeg"
+  },
+  {
+    title: "Expansion Anchors ",
+    features:
+      "High-contrast colors for visibility, resistant to heat, UV, and chemicals, available in various sizes.",
+    application:
+      "Ideal for concrete and masonry, these anchors expand upon installation for a secure hold.",
+    path: "/products/lan.png"
+  },
+  {
+    title: "Sleeve Anchors ",
+    features:
+      "High-contrast colors for visibility, resistant to heat, UV, and chemicals, available in various sizes.",
+    application:
+      "Designed for versatility, sleeve anchors can be used in various materials, providing excellent holding power",
+    path: "/products/scanner.jpeg"
+  },
+  {
+    title: "Hex Bolts ",
+    features:
+      "High-contrast colors for visibility, resistant to heat, UV, and chemicals, available in various sizes.",
+    application:
+      "Hex Bolts are Versatile and commonly used in construction and industrial applications.",
+    path: "/products/lanslots.png"
+  }
+];
+---
+
+<Layout title="Contact">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Electrical Assemblies</Fragment>
+      <Fragment slot="desc">We are a here to help.</Fragment>
+    </Sectionhead>
+
+    <div class="font-sans p-4 mx-auto lg:max-w-5xl md:max-w-3xl sm:max-w-full">
+      <main class="mt-16">
+        <ul class="grid gap-16 max-w-4xl mx-auto">
+          {
+            features.map((item) => (
+              <li>
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                  <Picture
+                    src={item.path}
+                    alt=""
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full rounded-md object-cover object-center bg-white"
+                  />
+                  <div>
+                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                      {item.title}
+                    </span>
+
+                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                      {item.title}
+                    </h2>
+
+                    <div class="flex gap-2 mt-3">
+                      <span class="text-gray-400">{item.application}</span>
+                      <span class="text-gray-400">• </span>
+                      {/* <time
+                        class="text-gray-400"
+                        datetime={blogPostEntry.data.publishDate.toISOString()}>
+                        {blogPostEntry.data.publishDate.toDateString()}
+                      </time> */}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </main>
+    </div>
+  </Container>
+</Layout>

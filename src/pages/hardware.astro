@@ -1,0 +1,281 @@
+---
+// @ts-ignore
+import { Picture } from "astro:assets";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from "free-astro-components";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+const product1 = [
+  {
+    title: "Expansion Anchors",
+    features:
+      "Ideal for concrete and masonry, these anchors expand upon installation for a secure hold.",
+    path: "/img/products/24.svg"
+  },
+  {
+    title: "Sleeve Anchors",
+    features:
+      "Designed for versatility, sleeve anchors can be used in various materials, providing excellent holding power.",
+    path: "/img/products/25.svg"
+  },
+  {
+    title: "Concrete Screws",
+    features:
+      "Quick to install, these screws provide a stronghold in concrete, brick, and block.",
+    path: "/img/products/26.svg"
+  }
+];
+
+const product2 = [
+  {
+    title: "Hex Bolts",
+    features:
+      "Hex Bolts are Versatile and commonly used in construction and industrial applications.",
+    path: "/img/products/27.svg"
+  },
+  {
+    title: "Flange Bolts",
+    features:
+      "Flange Bolts Provide a larger bearing surface for improved load distribution and are commonly used in structural applications.",
+    path: "/img/products/28.svg"
+  },
+  {
+    title: "High-Strength Bolts",
+    features:
+      "High-Strength Bolts Specifically designed for applications requiring superior tensile strength, ideal for heavy-duty machinery.",
+    path: "/img/products/29.svg"
+  }
+];
+
+const product3 = [
+  {
+    title: "Standard Cable Ties",
+    features:
+      "Standard Cable Ties Versatile and easy to use for general cable management.",
+    path: "/img/products/30.svg"
+  },
+  {
+    title: "Heavy-Duty Cable Ties",
+    features:
+      "Designed for demanding applications, these ties offer increased tensile strength for securing larger bundles.",
+    path: "/img/products/31.svg"
+  },
+  {
+    title: "Releasable Cable Ties",
+    features:
+      "Facilitate easy adjustments and repositioning, making them perfect for temporary setups.",
+    path: "/img/products/32.svg"
+  }
+];
+---
+
+<Layout title="Hardware Supply">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Hardware Supply</Fragment>
+    </Sectionhead>
+
+    <div class="container mx-auto mt-16 font-sans px-4">
+      <div class="max-w-6xl mx-auto">
+        <p class="mb-10 text-justify text-slate-600">
+          EvolvX is your trusted partner for premium non-standard fasteners and
+          engineered nut bolts supplies, offering a comprehensive range of
+          products crafted to meet the diverse demands across industries. Built
+          for outstanding durability and reliability, our hardware solutions
+          ensure that your fastening and securing requirements are fulfilled
+          with confidence and precision.
+        </p>
+
+        <h2 class="text-slate-600 font-semibold mb-4" id="anchor-fasteners">
+          ANCHOR FASTENERS
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX anchor fasteners are engineered for strength and stability,
+          making them essential for securing heavy loads in construction,
+          industrial, and commercial applications.
+        </p>
+      </div>
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto mb-16"
+      >
+        {
+          product1.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt="Sunset in the mountains"
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp1` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp1` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p><strong>Feature:</strong> {item.features}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto" id="tensile-nut-bolts">
+        <h2 class="text-slate-600 font-semibold mb-10">TENSILE NUT BOLTS</h2>
+      </div>
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product2.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt="Sunset in the mountains"
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp2` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp2` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p><strong>Feature:</strong> {item.features}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-16">
+        <h2 class="text-slate-600 font-semibold mb-4">CABLE TIE WRAPS</h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX offers a reliable selection of high-quality cable ties sourced
+          from trusted manufacturers to meet the diverse needs of our clients.
+          Cable ties are essential for organizing and securing cables in various
+          environments, delivering the strength and versatility required for
+          both residential and industrial applications. With a focus on quality
+          and durability, we ensure that our cable ties provide dependable
+          performance, helping you maintain a tidy, efficient, and safe
+          workspace.
+        </p>
+      </div>
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto mb-16"
+      >
+        {
+          product3.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt="Sunset in the mountains"
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp3` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp3` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p><strong>Feature:</strong> {item.features}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</Layout>

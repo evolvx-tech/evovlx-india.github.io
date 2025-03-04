@@ -1,0 +1,76 @@
+<div class="pickgradient">
+  <div class="content">
+    <div class="overlay-text">
+      <div class="typew sm:mb-5">
+        <h1 class="text-white font-semibold text-4xl heading">
+          RELIABILITY YOU CAN SEE
+        </h1>
+      </div>
+
+      <div class="typew sm:mb-10">
+        <p class="text-white text-2xl m-2">
+          Driven by quality, precision, and a deep commitment to industry
+          standards.
+        </p>
+      </div>
+      <div class="typew mt-5">
+        <a
+          href="/stickers"
+          class="btn shadow-lg text-cyan-800 bg-white focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-lg text-semibold px-6 py-2.5 text-center"
+          >View Products</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<style is:global>
+  .typew {
+    height: auto;
+  }
+  .content {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 110px);
+    background-color: #00b6f0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-image: linear-gradient(to right, #00b6f0 20%, transparent 100%),
+      url(/img/header-evolvx.webp);
+  }
+
+  .btn-bg-color {
+    background-color: #00b6f0 !important;
+  }
+  .btn-text-color {
+    color: #5b5b5b !important;
+  }
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .typew {
+      height: auto;
+    }
+    .content {
+      background-size: cover;
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 180, 240, 0.85) 80%,
+          rgba(0, 180, 240, 0.85) 100%
+        ),
+        url(/img/header-evolvx.webp);
+    }
+    .overlay-text {
+      left: 50%;
+      width: 100%;
+    }
+  }
+</style>

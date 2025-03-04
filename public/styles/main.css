@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.page-heading {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #00b6f0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(to right, rgba(0, 182, 240, 0.8) 30%, rgba(0, 182, 240, 0.95) 100%), url(../img/bg-heading.webp);
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1366px !important;
+  }
+}/*# sourceMappingURL=main.css.map */

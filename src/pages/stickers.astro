@@ -1,0 +1,781 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from "free-astro-components";
+
+const product1 = [
+  {
+    title: "Durable Barcode Labels",
+    features:
+      "Scratch-resistant surface, high-resolution print, and long-lasting adhesive",
+    application:
+      "Engineered to maintain readability under heavy wear and tear, making them ideal for asset tracking and inventory management",
+    path: "/img/products/1.svg"
+  },
+  {
+    title: "Weatherproof Labels",
+    features:
+      "Waterproof, UV-resistant, and temperature-stable, suitable for harsh weather conditions.",
+    application:
+      "Designed to endure extreme outdoor conditions, perfect for assets exposed to rain, sun, and temperature fluctuations.",
+    path: "/img/products/2.svg"
+  }
+];
+
+const product2 = [
+  {
+    title: "Self-Laminating Wrap Arounds",
+    features:
+      "Durable self-laminating layer for protection, resistant to oil, dirt, and moisture, and suitable for indoor and outdoor use.",
+    application:
+      "Protect important information on cables, wires, and harnesses, ensuring longevity even in demanding environments.",
+    path: "/img/products/5.svg"
+  },
+  {
+    title: "Terminal Block Markers",
+    features:
+      "High-temperature resistance, UV stability, and available in multiple sizes and shapes for compatibility with various terminal block brands.",
+    application:
+      "Mark terminal blocks clearly to ensure accurate identification and avoid wiring errors.",
+    path: "/img/products/6.svg"
+  }
+];
+
+const product3 = [
+  {
+    title: "Industrial Equipment Tags",
+    features:
+      "Heavy-duty material, resistant to abrasion, chemicals, and moisture; can be customized with logos or barcodes.",
+    application:
+      "Ideal for tagging heavy machinery and equipment for quick identification, inventory tracking, and maintenance scheduling.",
+    path: "/img/products/7.svg"
+  },
+  {
+    title: "Cable Identification Tags and Flags",
+    features:
+      "Heat and UV-resistant, designed to wrap around cables without slipping; available in self-laminating options for added protection.",
+    application:
+      "Label cables and wires for data and electrical systems, reducing downtime and aiding in organized cable management.",
+    path: "/img/products/4.svg"
+  },
+  {
+    title: "Color-coded Asset Tags",
+    features:
+      "High-visibility colors, easy-to-read text, and barcode options for tracking; available with tamper-evident or waterproof adhesives.",
+    application:
+      "Simplify asset management and inventory tracking by using color-coded tags to identify and group assets.",
+    path: "/img/products/Color-coded-Tags.webp"
+  }
+];
+
+const product4 = [
+  {
+    title: "Industrial Equipment Labels",
+    features:
+      "Extra-thick laminate for high durability, resistant to moisture, oils, and abrasion; writable area for added customization.",
+    application:
+      "Ideal for labeling industrial equipment, tools, and machinery frequently exposed to harsh conditions or frequent handling.",
+    path: "/img/products/10.svg"
+  },
+  {
+    title: "Inspection and Maintenance Record Labels",
+    features:
+      "Writable surface for recording inspection dates, clear self-laminate for protecting written information; highly resistant to oils and chemicals.",
+    application:
+      "Ideal for equipment requiring regular inspections or maintenance, helping teams keep information visible and intact over time.",
+    path: "/img/products/8.svg"
+  },
+  {
+    title: "Chemical-Resistant Labels",
+    features:
+      "Laminated layer resistant to harsh chemicals, corrosion, and solvents; customizable with barcodes, text, and logos.",
+    application:
+      "Ideal for labeling containers, pipes, or equipment in chemical processing environments, where protection from exposure is essential.",
+    path: "/img/products/11.svg"
+  }
+];
+
+const product5 = [
+  {
+    title: "Heat-Shrink Cable Labels",
+    features:
+      "Flame-retardant material, shrink ratio options for a snug fit, excellent resistance to chemicals and oils.",
+    application:
+      "Ideal for permanently labeling and protecting cables and wires in high-temperature and industrial environments, providing a durable and secure fit. Ideal for color-coding cables by function or department, ensuring organized and efficient cable management in complex systems.",
+    path: "/img/products/12.svg"
+  }
+];
+
+const product6 = [
+  {
+    title: "Standard Traffolyte Labels",
+    features:
+      "UV and chemical-resistant, engraved with clear and legible text, available in multiple color combinations.",
+    application:
+      "Suitable for marking electrical panels, industrial equipment, and machinery controls in both indoor and outdoor settings.",
+    path: "/img/products/13.svg"
+  },
+  {
+    title: "High-Temperature Traffolyte Labels",
+    features:
+      "Heat-resistant material, maintains legibility and color integrity in high-temperature environments, resistant to corrosion and fading.",
+    application:
+      "Ideal for environments with high heat exposure, such as manufacturing plants, ensuring clear and durable labeling.",
+    path: "/img/products/14.svg"
+  },
+  {
+    title: "Raised Panel Labels",
+    feature:
+      "Embossed or raised lettering for tactile readability, resistant to abrasion, available in custom shapes and sizes.",
+    application:
+      "Perfect for control panels and equipment interfaces, adding a tactile layer that enhances visibility and accessibility.",
+    path: "/img/products/15.svg"
+  },
+  {
+    title: "Engraved Warning Signs",
+    features:
+      "Highly visible colors, engraved text that is resistant to wear and chemicals, available with adhesive backing or mounting holes.",
+    application:
+      "Used for safety warnings, instructions, and compliance labeling on equipment or in hazardous areas, ensuring critical information remains intact.",
+    path: "/img/products/16.svg"
+  },
+  {
+    title: "Multi-layered Traffolyte Labels",
+    features:
+      "Three-layered construction for enhanced durability, contrasting layers for clear readability, customizable with graphics and barcodes.",
+    application:
+      "Effective for color-coded or visually distinctive labeling, making them suitable for complex machinery or equipment.",
+    path: "/img/products/17.svg"
+  },
+  {
+    title: "Custom-Shaped Traffolyte Tags",
+    features:
+      "Fully customizable shapes and sizes, UV-stable and weather-resistant, engravable for custom text or graphics.",
+    application:
+      "Ideal for unique labelling needs, such as machinery with specific shapes or surfaces, ensuring compatibility and clarity.",
+    path: "/img/products/18.svg"
+  }
+];
+
+const product7 = [
+  {
+    title: "Safety and Warning Labels",
+    features:
+      "UV-resistant material, scratch-proof surface, available in high-visibility colors.",
+    application:
+      "Suitable for marking hazardous areas or equipment, helping maintain compliance with safety standards in industrial and commercial settings.",
+    path: "/img/products/19.svg"
+  },
+  {
+    title: "Instructional and Compliance Labels",
+    features:
+      "Durable waterproof vinyl, clear and legible print for instructions or regulations, available with tamper-evident options.",
+    application:
+      "Ideal for equipment instructions, operational guidelines, and compliance notices, ensuring information remains visible and intact.",
+    path: "/img/products/20.svg"
+  }
+];
+
+const product8 = [
+  {
+    title: "Custom Warning and Danger Signs",
+    features:
+      "Customizable text and graphics, high-contrast print for maximum visibility, weather-resistant coating.",
+    application:
+      "Effective for machinery, construction zones, or chemical storage areas where custom warnings are required for specific hazards.",
+    path: "/img/products/21.svg"
+  },
+  {
+    title: "Equipment Instruction Signs",
+    features:
+      "Clear, easy-to-read instructions, resistant to oils, solvents, and abrasion; available in multiple sizes.",
+    application:
+      "Suitable for labeling machinery with operational guidelines, ensuring operators have critical instructions readily accessible.",
+    path: "/img/products/22.svg"
+  },
+  {
+    title: "Durable PVC Labels",
+    features:
+      "Waterproof, scratch-resistant, UV-stable for outdoor use, available in multiple colors and sizes.",
+    application:
+      "Ideal for permanent labeling on equipment, containers, and outdoor assets, providing longevity in challenging environments.",
+    path: "/img/products/23.svg"
+  }
+];
+---
+
+<Layout title="Industrial Identification Solutions">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Industrial Identification Solutions</Fragment>
+    </Sectionhead>
+
+    <div class="container mx-auto mt-16 font-sans px-4">
+      <div class="max-w-6xl mx-auto">
+        <p class="mb-10 text-justify text-slate-600">
+          At EvolvX, we specialize in delivering high-quality, custom
+          identification solutions tailored to meet the unique demands of your
+          industry. Our extensive product range includes asset labels,
+          electrical identification markers, safety signs, and datacom IDs, each
+          crafted to enhance safety, streamline the organization, and ensure
+          compliance in any setting. Our products adhere to recognized
+          standards, including Australian Standard AS1319 for safety signage and
+          ISO 7010 for internationally recognized safety symbols, ensuring they
+          meet stringent requirements for durability and clarity. Explore our
+          versatile selection, meticulously engineered to withstand tough
+          conditions and provide enduring performance for your business needs.
+        </p>
+
+        <h2
+          class="text-slate-600 font-semibold mb-4"
+          id="custom-labels-stickers"
+        >
+          CUSTOM ASSET LABELS AND STICKERS
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX offers a comprehensive range of custom asset labels and
+          stickers to keep your assets identifiable, secure, and traceable.
+          Crafted from high-quality materials, our labels withstand moisture,
+          chemicals, abrasion, and UV light, making them suitable for indoor and
+          outdoor use across various industries. Each label can be personalized
+          with logos, barcodes, and unique identifiers to streamline asset
+          management, reduce losses, and deter theft.
+        </p>
+      </div>
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product1.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button type="button" class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center" data-modal-trigger={`modal-idp` + index} >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20">
+        <h2 class="text-slate-600 font-semibold mb-4">
+          ELECTRICAL AND DATACOM IDENTIFICATION LABELS
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          We offer a range of specialized labelling solutions to enhance safety
+          and improve efficiency. Our labels, tags, and markers are designed to
+          be clearly visible, durable, and resistant to challenging conditions,
+          ensuring that critical information is easily accessible during
+          inspection and maintenance. Custom datacom labels are also available
+          to identify cables, circuits, and components, reducing downtime and
+          aiding in efficient troubleshooting.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product2.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp2` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp2` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20" id="tags-and-flags">
+        <h2 class="text-slate-600 font-semibold mb-4">TAGS AND FLAGS</h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX offers a versatile range of tags and flags designed for quick
+          identification and tracking in various environments. Built to endure
+          extreme temperatures, chemicals, and rugged conditions, our tags and
+          flags are ideal for industrial and field applications. Available in a
+          variety of colors, sizes, and materials, they provide high visibility
+          and easy readability, making them perfect for labeling equipment,
+          machinery, and other assets.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product3.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp3` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp3` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20" id="equipment-labels">
+        <h2 class="text-slate-600 font-semibold mb-4">
+          Equipment Labels
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          We provide durable and high-quality equipment labels designed to withstand the toughest environments. Whether your equipment operates in industrial, outdoor, or high-temperature settings, our labels provide clear, long-lasting identification to ensure compliance, safety, and efficient operations.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product4.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp4` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp4` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20" id="sleeves-wrap-around-labels">
+        <h2 class="text-slate-600 font-semibold mb-4">
+          Sleeves and Heat Shrinks
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          At EvolvX, we offer high-quality sleeves and heat shrink products tailored for various industrial applications. Our solutions provide reliable insulation, protection, and durability, making them ideal for wiring, cable management, and equipment labeling. We have a wide range of sizes, colors, and materials available, ensuring prompt and efficient service while adhering to the highest safety and compliance standards.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product5.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp5` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp5` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" class="w-full" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20">
+        <h2 class="text-slate-600 font-semibold mb-4">
+          RAISED PANELS AND TRAFFOLYTE LABELS
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX offers reliable solutions for permanent, high-visibility
+          labeling, featuring raised panels and Traffolyte labels. These labels
+          are designed to withstand extreme environments, including exposure to
+          UV light, chemicals, and abrasion, making them suitable for both
+          industrial and outdoor applications. The raised panels provide a
+          tactile layer that enhances readability, making them ideal for control
+          panels, warning signs, and equipment labels.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product6.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp6` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp6` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20" id="custom-made-vinyl-labels">
+        <h2 class="text-slate-600 font-semibold mb-4">
+          CUSTOM-MADE VINYL LABELS
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX offers custom-made vinyl labels that provide a durable and
+          versatile solution for various applications, from branding and asset
+          tracking to safety instructions and compliance labels. These labels
+          are waterproof, UV-resistant, and designed to withstand rough
+          conditions, ensuring they maintain a professional look even in
+          demanding environments. With options for custom colors, graphics, and
+          text, our vinyl labels are a flexible choice for both indoor and
+          outdoor use.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product7.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp7` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp7` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+
+      <div class="max-w-6xl mx-auto mt-20">
+        <h2 class="text-slate-600 font-semibold mb-4">
+          SAFETY SIGNS AND PVC LABELS
+        </h2>
+        <p class="text-slate-600 mb-10 text-justify">
+          EvolvX offers high-quality safety signs and PVC labels to ensure
+          clear, effective communication of critical information in any
+          environment. Our safety signs are compliant with industry standards,
+          providing essential instructions, warnings, and directions to promote
+          a safer workplace. PVC labels offer a durable solution for areas that
+          require long-lasting labeling, capable of withstanding exposure to
+          harsh elements.
+        </p>
+      </div>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-16 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 max-w-6xl justify-center mx-auto"
+      >
+        {
+          product8.map((item, index) => (
+            <div class="group w-full transition duration-300 hover:scale-110 rounded-2xl shadow-2xl shadow card-body overflow-hidden">
+              <img
+                class="w-full"
+                src={item.path}
+                alt={item.title}
+                style="height: 280px; object-fit: cover;"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-slate-700 text-xl mb-3">
+                  {item.title}
+                </div>
+                <button
+                  type="button"
+                  class="cursor-pointer text-md text-indigo-600 font-semibold flex items-center"
+                  data-modal-trigger={`modal-idp8` + index}
+                >
+                  Know More{" "}
+                  <span
+                    aria-hidden="true"
+                    class="text-indigo-400 text-lg ml-2 "
+                  >
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+            <Modal id={`modal-idp8` + index}` class="custom-modal" size="3xl">
+              <ModalHeader>
+                <h3 class="text-xl font-bold">{item.title}</h3>
+              </ModalHeader>
+              <ModalBody>
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={item.path} alt="" />
+                  </div>
+                  <div>
+                    <p class="mb-4"><strong>Feature:</strong> {item.features}</p>
+                    <p><strong>Application:</strong> {item.application}</p>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Close" data-modal-close />
+              </ModalFooter>
+            </Modal>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .custom-modal {
+    --ac-modal-border-radius: 0;
+    --ac-modal-backdrop-filter: grayscale(100%);
+  }
+</style>

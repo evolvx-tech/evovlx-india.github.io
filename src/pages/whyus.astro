@@ -1,0 +1,221 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Why Choose Us">
+  <Container>
+    <section
+      class="page-heading"
+      style="background-image: linear-gradient(to right, rgba(0, 182, 240, 0.8) 30%, rgba(0, 182, 240, 0.95) 100%), url(/img/why-choose-us-header.webp); background-position: bottom;background-size: cover;"
+    >
+      <h1 class="text-4xl lg:text-5xl font-bold text-white">Why Choose Us</h1>
+    </section>
+
+    <section class="bg-gray-100">
+      <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 items-center content-center gap-8"
+        >
+          <div class="max-w-lg">
+            <h2
+              class="text-3xl font-extrabold text-gray-900 tracking-tight mb-10"
+            >
+              Why <span class="name-hl">EvolvX</span> is The Right Choice for You
+            </h2>
+            <p class="text-lg leading-relaxed text-slate-500 mt-5 text-justify">
+              At <strong>EvolvX</strong>, we focus on quality, durability, and
+              customization in our labeling solutions for diverse applications,
+              from industrial to commercial.
+            </p>
+          </div>
+          <div class="mt-12 md:mt-0">
+            <img
+              src="/img/why-us.webp"
+              alt="About Us Image"
+              class="rounded-lg shadow-md"
+              style="height: 300px; width: 100%; object-fit: cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mx-auto mt-16 px-4 lg:px-0">
+        <div class="w-full">
+          <div class="flex flex-col w-full mb-10 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+              <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                <span
+                  class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-indigo-500 rounded-lg"
+                ></span>
+                <div
+                  class="relative h-full p-5 bg-white border-2 border-indigo-500 rounded-lg"
+                >
+                  <div class="flex items-center -mt-1 mb-4">
+                    <div class="img flex h-12 w-12">
+                      <img src="/img/icons/quality.png" alt="Quality" />
+                    </div>
+                    <h3 class="my-2 ml-3 text-xl font-bold text-gray-800">
+                      Commitment to Quality
+                    </h3>
+                  </div>
+                  <p
+                    class="mb-2 text-lg leading-relaxed text-slate-500 text-justify"
+                  >
+                    EvolvX is a trusted supplier of high-quality industiral
+                    solutions designed for durability and reliability. Our
+                    products withstand environmental challenges like moisture,
+                    chemicals, UV light, and abrasion, backed by rigorous
+                    testing. Our safety signs meet Australian Standards for
+                    Signage (AS1319) and ISO 7010, in line with global
+                    guidelines for hazard identification and risk management.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+              <div class="relative h-full ml-0 md:mr-10">
+                <span
+                  class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"
+                ></span>
+                <div
+                  class="relative h-full p-5 bg-white border-2 border-purple-500 rounded-lg"
+                >
+                  <div class="flex items-center -mt-1 mb-4">
+                    <div class="img flex h-12 w-12">
+                      <img src="/img/icons/durability.png" alt="Durability" />
+                    </div>
+                    <h3 class="my-2 ml-3 text-xl font-bold text-gray-800">
+                      Durability You Can Trust
+                    </h3>
+                  </div>
+                  <p
+                    class="mb-2 text-lg leading-relaxed text-slate-500 text-justify"
+                  >
+                    Our products are designed to endure harsh conditions,
+                    maintaining clarity and integrity in extreme temperatures
+                    and tough environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-full mb-10 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+              <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                <span
+                  class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"
+                ></span>
+                <div
+                  class="relative h-full p-5 bg-white border-2 border-blue-400 rounded-lg"
+                >
+                  <div class="flex items-center -mt-1 mb-4">
+                    <div class="img flex h-12 w-12">
+                      <img src="/img/icons/solutions.png" alt="solutions" />
+                    </div>
+                    <h3 class="my-2 ml-3 text-xl font-bold text-gray-800">
+                      Custom Solutions
+                    </h3>
+                  </div>
+                  <p
+                    class="mb-2 text-lg leading-relaxed text-slate-500 text-justify"
+                  >
+                    With a range of customization options, you can tailor labels
+                    and signs to your specific needs, including size, shape, and
+                    graphics.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full sm:mb-0 sm:w-1/2">
+              <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                <span
+                  class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-yellow-400 rounded-lg"
+                ></span>
+                <div
+                  class="relative h-full p-5 bg-white border-2 border-yellow-400 rounded-lg"
+                >
+                  <div class="flex items-center -mt-1 mb-4">
+                    <div class="img flex h-12 w-12">
+                      <img src="/img/icons/support.png" alt="support" />
+                    </div>
+                    <h3 class="my-2 ml-3 text-xl font-bold text-gray-800">
+                      Expert Support
+                    </h3>
+                  </div>
+                  <p
+                    class="mb-2 text-lg leading-relaxed text-slate-500 text-justify"
+                  >
+                    Our knowledgeable team provides personalized assistance
+                    throughout the design and ordering process to ensure optimal
+                    solutions for your needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-full mb-5 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+              <div class="relative h-full ml-0 md:mr-10">
+                <span
+                  class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded-lg"
+                ></span>
+                <div
+                  class="relative h-full p-5 bg-white border-2 border-green-500 rounded-lg"
+                >
+                  <div class="flex items-center -mt-1 mb-4">
+                    <div class="img flex h-12 w-12">
+                      <img src="/img/icons/versatile.png" alt="versatile" />
+                    </div>
+                    <h3 class="my-2 ml-3 text-xl font-bold text-gray-800">
+                      Versatile Use
+                    </h3>
+                  </div>
+                  <p
+                    class="mb-2 text-lg leading-relaxed text-slate-500 text-justify"
+                  >
+                    EvolvX solutions are suitable for various industries,
+                    including manufacturing, healthcare, logistics, and retail.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+              <div class="relative h-full ml-0 md:mr-10">
+                <span
+                  class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-500 rounded-lg"
+                ></span>
+                <div
+                  class="relative h-full p-5 bg-white border-2 border-blue-500 rounded-lg"
+                >
+                  <div class="flex items-center -mt-1 mb-4">
+                    <div class="img flex h-12 w-12">
+                      <img
+                        src="/img/icons/satisfaction.png"
+                        alt="satisfaction"
+                      />
+                    </div>
+                    <h3 class="my-2 ml-3 text-xl font-bold text-gray-800">
+                      Customer Satisfaction
+                    </h3>
+                  </div>
+                  <p
+                    class="mb-2 text-lg leading-relaxed text-slate-500 text-justify"
+                  >
+                    We’re dedicated to exceeding customer expectations and
+                    quickly resolving any issues.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Container>
+</Layout>
